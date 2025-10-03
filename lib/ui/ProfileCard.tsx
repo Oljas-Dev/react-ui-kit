@@ -5,9 +5,9 @@ import ProfileInfo from "./ProfileInfo";
 const StyledCard = styled.div`
   display: flex;
   flex-direction: row;
-  width: 36rem;
-  height: 21rem;
-  background-color: #231f20;
+  max-width: 40rem;
+  height: 23.4rem;
+  background-color: var(--sec-bg-color);
 
   border-top: 0.2rem solid var(--primary-color);
 `;
