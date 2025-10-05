@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Tag from "./Tag";
 import toast from "react-hot-toast";
-import useProfileCard from "../context/profileCardContext";
+import { useProfileCard } from "../context/profileCardContext";
 
 const StyledTagsGroup = styled.ul`
   display: flex;

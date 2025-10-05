@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import TagsGroup from "./TagsGroup";
 import TagsAndButton from "./TagsAndButton";
 
 const StyledInfo = styled.div`

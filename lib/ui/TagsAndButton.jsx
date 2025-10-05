@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Button from "./Button";
 import TagsGroup from "./TagsGroup";
-
-const StyledTagsAndButton = styled.div`
+const StyledTagsAndButton = styled.div `
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -10,12 +9,9 @@ const StyledTagsAndButton = styled.div`
   margin-top: auto;
   margin-right: calc(var(--main-margin) * -1);
 `;
-
 export default function TagsAndButton() {
-  return (
-    <StyledTagsAndButton>
+    return (<StyledTagsAndButton>
       <Button>get in touch</Button>
       <TagsGroup />
-    </StyledTagsAndButton>
-  );
+    </StyledTagsAndButton>);
 }

@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { ProfileCardProvider } from "../lib/context/profileCardContext";
 import { Toaster } from "react-hot-toast";
-import { ProfileCard } from "../lib/ui/ProfileCard";
-import { imagePlaceholder } from "../lib/helpers";
+import { ProfileCard } from "../lib/main.ts";
 
 const StyledApp = styled.div`
   display: flex;
@@ -17,13 +16,10 @@ function App() {
       <StyledApp>
         <ProfileCard
           profileData={{
-            firstname: "John",
-            lastname: "Mustermann",
-            title: "Software Engineer",
-            summary:
-              "Passionate developer with 5 years of experience in web development.",
-            imgUrl: imagePlaceholder,
-            tags: ["JavaScript", "React", "Node.js"],
+            firstname: "Oljas",
+            lastname: "Medetbaev",
+            title: "Junior React Developer",
+            tags: ["React", "js", "CSS", "HTML"],
           }}
         />
         <Toaster

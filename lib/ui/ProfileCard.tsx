@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 
-import useProfileCard from "../context/profileCardContext";
+import { useProfileCard } from "../context/profileCardContext";
 import ProfileInfo from "./ProfileInfo";
 import { profileData } from "../types";
+import { imagePlaceholder } from "../helpers";
 
 const StyledCard = styled.div`
   display: flex;
@@ -40,7 +41,7 @@ function ProfileCard({ profileData }: profileData) {
 
   return (
     <StyledCard>
-      <StyledImage $img={imgUrl} />
+      <StyledImage $img={imgUrl ? imgUrl : imagePlaceholder} />
       <ProfileInfo
         firstname={firstname || "Tim"}
         lastname={lastname || "Skywalker"}

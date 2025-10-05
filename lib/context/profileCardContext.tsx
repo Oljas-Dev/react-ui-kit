@@ -12,11 +12,7 @@ const profileCardContext = createContext<ProfileCardContextType>(
   {} as ProfileCardContextType
 );
 
-export function ProfileCardProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+function ProfileCardProvider({ children }: { children: React.ReactNode }) {
   const [profileData, setProfileData] =
     useState<ProfileCardContextType["profileData"]>();
 
@@ -27,7 +23,7 @@ export function ProfileCardProvider({
   );
 }
 
-export default function useProfileCard() {
+function useProfileCard() {
   const context = useContext(profileCardContext);
 
   if (context === undefined) {
@@ -36,3 +32,5 @@ export default function useProfileCard() {
 
   return context;
 }
+
+export { ProfileCardProvider, useProfileCard };
