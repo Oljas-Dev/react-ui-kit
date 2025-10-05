@@ -1,12 +1,15 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-import { imagePlaceholder } from "../helpers";
+
+import useProfileCard from "../context/profileCardContext";
 import ProfileInfo from "./ProfileInfo";
+import { profileData } from "../types";
 
 const StyledCard = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 40rem;
-  height: 23.4rem;
+  min-height: 23.4rem;
   background-color: var(--sec-bg-color);
 
   border-top: 0.2rem solid var(--primary-color);
@@ -18,25 +21,23 @@ interface ImageProps {
 
 const StyledImage = styled.span<ImageProps>`
   width: 35%;
-  background-image: url(${(props) => props.$img || imagePlaceholder});
+  background-image: url(${(props) => props.$img});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 `;
 
-function ProfileCard({
-  imgUrl,
-  firstname,
-  lastname,
-  title,
-  summary,
-}: {
-  imgUrl?: string;
-  firstname?: string;
-  lastname?: string;
-  title?: string;
-  summary?: string;
-}) {
+function ProfileCard({ profileData }: profileData) {
+  const { profileData: data, setProfileData } = useProfileCard();
+
+  const { firstname, lastname, title, summary, imgUrl } = data || {};
+
+  useEffect(() => {
+    if (profileData) {
+      setProfileData(profileData);
+    }
+  }, [profileData]);
+
   return (
     <StyledCard>
       <StyledImage $img={imgUrl} />

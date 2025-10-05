@@ -3,6 +3,38 @@
 :root {
   --primary-color: #f9f4da;
   --sec-bg-color: #231f20;
+  --tag-bg-color-0: #50bde5;
+  --tag-bg-color-1: #0ba95b;
+  --tag-bg-color-2: #fcba28;
+
+  --main-margin: 1.6rem;
+
+  --spring-easing: linear(
+    0,
+    0.009,
+    0.035 2.1%,
+    0.141 4.4%,
+    0.723 12.9%,
+    0.938 16.7%,
+    1.017,
+    1.077,
+    1.121,
+    1.149 24.3%,
+    1.159,
+    1.163,
+    1.161,
+    1.154 29.9%,
+    1.129 32.8%,
+    1.051 39.6%,
+    1.017 43.1%,
+    0.991,
+    0.977 51%,
+    0.974 53.8%,
+    0.975 57.1%,
+    0.997 69.8%,
+    1.003 76.9%,
+    1
+  );
 }
 
 *,
@@ -11,6 +43,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s var(--spring-easing);
 }
 
 html {

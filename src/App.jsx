@@ -1,5 +1,8 @@
 import styled from "styled-components";
+import { ProfileCardProvider } from "../lib/context/profileCardContext";
+import { Toaster } from "react-hot-toast";
 import { ProfileCard } from "../lib/ui/ProfileCard";
+import { imagePlaceholder } from "../lib/helpers";
 
 const StyledApp = styled.div`
   display: flex;
@@ -10,9 +13,30 @@ const StyledApp = styled.div`
 
 function App() {
   return (
-    <StyledApp>
-      <ProfileCard />
-    </StyledApp>
+    <ProfileCardProvider>
+      <StyledApp>
+        <ProfileCard
+          profileData={{
+            firstname: "John",
+            lastname: "Mustermann",
+            title: "Software Engineer",
+            summary:
+              "Passionate developer with 5 years of experience in web development.",
+            imgUrl: imagePlaceholder,
+            tags: ["JavaScript", "React", "Node.js"],
+          }}
+        />
+        <Toaster
+          toastOptions={{
+            style: {
+              color: "var(--primary-color)",
+            },
+            success: { style: { background: "var(--sec-bg-color)" } },
+            error: { style: { background: "var(--sec-bg-color)" } },
+          }}
+        />
+      </StyledApp>
+    </ProfileCardProvider>
   );
 }
 
